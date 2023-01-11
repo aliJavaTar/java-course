@@ -1,21 +1,23 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.*;
+
 public class TextTest {
 
     @Test
     void should_Give_FirstChar() {
 
         String name = "ALI";
-        String lowerCase = name.toLowerCase();
-        Assertions.assertEquals("ali",lowerCase);
+        String convertNameToLowerCase = name.toLowerCase();
+        Assertions.assertEquals("ali", convertNameToLowerCase);
 
-//        String up = lowerCase.toUpperCase();
-//        Assertions.assertEquals(up,lowerCase);
+        String convertNameToUpper = convertNameToLowerCase.toUpperCase();
 
-//       AS
+        assertThat(convertNameToUpper).isEqualTo("ALI");
 
 
+//        assertThat(convertNameToLowerCase).isEqualTo("")
 
     }
 }
